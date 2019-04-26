@@ -1,2 +1,2 @@
-# posfight
+# Posfight
 A posnet fight game
