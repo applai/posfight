@@ -1,0 +1,87 @@
+@font-face{
+    font-family: CeraBl;
+    src: url('assets/Cera\ Pro\ Bold.otf') format('opentype');
+    font-weight: bold;
+}
+
+body {
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-color: #333333;
+}
+
+#game {
+    position: relative;
+}
+
+button {
+    position: absolute;
+    right: 10px;
+    width: 200px;
+    height: 50px;
+    font-family: 'CeraBl';
+    font-size: 125%;
+    color: white;
+    background-color: transparent;
+    border-radius: 25px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+#speed {
+    top: 0;
+}
+
+#run {
+    top: 60px;
+}
+
+h1 {
+    color: white;
+    font-family: 'CeraBl';
+    font-size: 300%;
+}
+
+p {
+    color: white;
+    font-family: 'CeraBl';
+    font-size: 150%;
+}
+
+.infos {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 600px;
+}
+
+.how {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 600px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+@media screen and (max-width: 1900px){
+
+    .infos {
+        position: absolute;
+        top: 900px;
+        left: 10px;
+        width: 45%;
+    }
+    
+    .how {
+        position: absolute;
+        top: 900px;
+        right: 10px;
+        width: 45%;
+    }
+}
