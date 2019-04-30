@@ -16181,7 +16181,6 @@ function Renderer(scenes, options){
     this.resizeToFit();
     this.render();
     this.createStats();
-    this.addLogo();
     this.centerCamera(0, 0);
 
     window.onresize = function(){
@@ -16908,28 +16907,7 @@ Renderer.prototype.createStats = function(){
     */
 };
 
-Renderer.prototype.addLogo = function(){
-    var css = [
-        'position:absolute',
-        'left:10px',
-        'top:15px',
-        'text-align:center',
-        'font: 13px Helvetica, arial, freesans, clean, sans-serif',
-    ].concat(disableSelectionCSS);
 
-    var div = document.createElement('div');
-    div.innerHTML = [
-        "<div style='"+css.join(';')+"' user-select='none'>",
-        "<h1 style='margin:0px'><a href='http://github.com/schteppe/p2.js' style='color:black; text-decoration:none;'>p2.js</a></h1>",
-        "<p style='margin:5px'>Physics Engine</p>",
-        '<a style="color:black; text-decoration:none;" href="https://twitter.com/share" class="twitter-share-button" data-via="schteppe" data-count="none" data-hashtags="p2js">Tweet</a>',
-        "</div>"
-    ].join("");
-    this.elementContainer.appendChild(div);
-
-    // Twitter button script
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-};
 
 Renderer.zoomInEvent = {
     type:"zoomin"
