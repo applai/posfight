@@ -52,7 +52,9 @@ class Player {
     color = [[0, 0, 255], [0, 255, 0], [255, 0, 0], [0, 255, 255], [0, 0, 0], [255, 255, 255]]
 
 
-    constructor() { }
+    constructor() {
+        this.addBodyParts();
+    }
 
     refresh(pos) {
 
@@ -183,5 +185,33 @@ class Player {
         line(this.llxs, this.llys, this.llxe, this.llye)
         line(this.ruxs, this.ruys, this.ruxe, this.ruye)
         line(this.rlxs, this.rlys, this.rlxe, this.rlye)
+    }
+
+    addBodyParts() {
+        // head
+        this.head = Matter.Bodies.rectangle(50, 0, 50, 50);
+        this.ground = Matter.Bodies.rectangle(0, 450, 700, 100);
+        this.ground.isStatic = true;
+        Matter.World.add(world, [this.head, this.ground])
+
+    }
+
+    show() {
+        const groundPos = this.ground.position;
+        const headPos = this.head.position;
+        const angle = this.head.angle;
+        push();
+        rectMode(CENTER);
+        rotate(angle);
+        fill(0, 0, 255);
+        strokeWeight(0);
+        rect(headPos.x, headPos.y, 50, 50);
+        pop();
+        push();
+        fill(255);
+        strokeWeight(0)
+        rect(groundPos.x, groundPos.y, 700, 100);
+        pop()
+
     }
 }
